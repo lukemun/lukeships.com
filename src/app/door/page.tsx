@@ -6,21 +6,53 @@ const WORDS = ["LET", "ME", "IN"];
 
 export default function DoorPage() {
   const [pressedKeys, setPressedKeys] = useState<Set<number>>(new Set());
+  const [inkSpots, setInkSpots] = useState<{ x: number; y: number }[]>([]);
   const keyRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const pressedRef = useRef<Set<number>>(new Set());
 
   const handlePress = useCallback((index: number) => {
-    setPressedKeys((prev) => {
-      if (prev.has(index)) return prev;
-      const next = new Set(prev);
-      next.add(index);
-      return next;
-    });
+    if (pressedRef.current.has(index)) return;
+    pressedRef.current.add(index);
+
+    setPressedKeys(new Set(pressedRef.current));
+
+    const el = keyRefs.current[index];
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      setInkSpots((prev) => [
+        ...prev,
+        { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 },
+      ]);
+    }
   }, []);
+
+  const allPressed = pressedKeys.size === 7;
 
   let keyIndex = 0;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+      <style>{`
+        @keyframes inkGrow {
+          from { transform: translate(-50%, -50%) scale(1); }
+          to { transform: translate(-50%, -50%) scale(4000); }
+        }
+      `}</style>
+      {inkSpots.map((spot, i) => (
+        <div
+          key={i}
+          className={`pointer-events-none absolute rounded-full bg-black ${
+            allPressed ? "animate-[inkGrow_3s_linear_forwards]" : "animate-[inkGrow_12s_linear_forwards]"
+          }`}
+          style={{
+            left: spot.x,
+            top: spot.y,
+            width: 1,
+            height: 1,
+            transform: "translate(-50%, -50%)",
+          }}
+        />
+      ))}
       <div className="flex items-center gap-6">
         {WORDS.map((word, wordIdx) => (
           <div key={wordIdx} className="flex gap-1">
