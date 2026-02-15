@@ -77,16 +77,8 @@ export default function Strength5Visual() {
   return (
     <div style={{ color: "#E2E8F0", fontFamily: "var(--font-sans), sans-serif", padding: "0", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 28 }}>
-        <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "#64748B", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>Strength 05 / 07</div>
-        <h1 style={{ fontSize: 32, fontWeight: 700, margin: "0 0 12px 0", lineHeight: 1.15, background: "linear-gradient(135deg, #E2E8F0 0%, #94A3B8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Iterative Refinement Over Generation</h1>
-        <p style={{ fontSize: 15, color: "#94A3B8", lineHeight: 1.65, margin: 0, maxWidth: 820 }}>
-          LLMs are measurably <strong style={{ color: "#CBD5E1" }}>better at improving text than generating from scratch</strong>. Editing is a narrower task — the model focuses its attention precisely. Critique-rewrite cycles produce output 30–60% better than single-shot generation.
-        </p>
-      </div>
-
       {/* Stage Pipeline */}
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 20 }}>
+      <div style={{ maxWidth: 960, width: "100%", marginBottom: 12 }}>
         <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
           {STAGES.map((s, i) => (
             <div key={s.id} style={{ display: "flex", alignItems: "center", flex: 1 }}>

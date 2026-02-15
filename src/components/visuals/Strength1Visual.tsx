@@ -92,9 +92,9 @@ export default function Strength1Visual() {
   const startTimeRef = useRef<number | null>(null);
 
   const scenario = SCENARIOS[activeScenario];
-  const canvasW = 520;
-  const canvasH = 420;
-  const pad = 60;
+  const canvasW = 580;
+  const canvasH = 260;
+  const pad = 20;
 
   const handleScenarioChange = useCallback(
     (idx: number) => {
@@ -165,47 +165,13 @@ export default function Strength1Visual() {
         }
       `}</style>
 
-      {/* Header */}
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 32 }}>
-        <div
-          style={{
-            fontFamily: "var(--font-mono), monospace",
-            fontSize: 11,
-            color: "#64748B",
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            marginBottom: 8,
-          }}
-        >
-          Strength 01 / 07
-        </div>
-        <h1
-          style={{
-            fontSize: 32,
-            fontWeight: 700,
-            margin: "0 0 12px 0",
-            lineHeight: 1.15,
-            background: "linear-gradient(135deg, #E2E8F0 0%, #94A3B8 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          Massive Parallel Pattern Matching
-        </h1>
-        <p style={{ fontSize: 15, color: "#94A3B8", lineHeight: 1.65, margin: 0, maxWidth: 820 }}>
-          An LLM doesn't "know" things — it holds <em>structural templates</em> for how things relate, compressed from billions of documents.
-          A generic prompt hits the <strong style={{ color: "#CBD5E1" }}>statistical centroid</strong> — the most average blend.
-          Specific prompts pull toward the edges where novel connections live.
-        </p>
-      </div>
-
       {/* Main Visualization */}
       <div
         style={{
           background: "linear-gradient(180deg, #0F1629 0%, #131B2E 100%)",
           borderRadius: 16,
           border: "1px solid rgba(148, 163, 184, 0.08)",
-          padding: "28px 28px 20px",
+          padding: "16px 20px 12px",
           maxWidth: 960,
           width: "100%",
           boxShadow: "0 4px 40px rgba(0,0,0,0.4)",

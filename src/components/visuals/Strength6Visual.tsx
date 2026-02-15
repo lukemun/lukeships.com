@@ -112,16 +112,8 @@ export default function Strength6Visual() {
   return (
     <div style={{ color: "#E2E8F0", fontFamily: "var(--font-sans), sans-serif", padding: "0", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 28 }}>
-        <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "#64748B", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>Strength 06 / 07</div>
-        <h1 style={{ fontSize: 32, fontWeight: 700, margin: "0 0 12px 0", lineHeight: 1.15, background: "linear-gradient(135deg, #E2E8F0 0%, #94A3B8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Structured Output Fidelity</h1>
-        <p style={{ fontSize: 15, color: "#94A3B8", lineHeight: 1.65, margin: 0, maxWidth: 820 }}>
-          A clear schema acts as <strong style={{ color: "#CBD5E1" }}>rails that keep the model on track</strong>. The more precisely you define the <em>shape</em> of what you want, the better the content within that shape. Ambiguous requests produce ambiguous results. Schemas produce precision.
-        </p>
-      </div>
-
       {/* Mode Selector */}
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 16, display: "flex", gap: 6, flexWrap: "wrap" }}>
+      <div style={{ maxWidth: 960, width: "100%", marginBottom: 10, display: "flex", gap: 6, flexWrap: "wrap" }}>
         {MODES.map((m, i) => (
           <button key={m.id} onClick={() => setActiveMode(i)} style={{
             flex: "1 1 150px", padding: "12px 12px", textAlign: "center", cursor: "pointer",

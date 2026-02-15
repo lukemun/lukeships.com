@@ -104,20 +104,12 @@ export default function Strength2Visual() {
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
 
-  const W = 640, H = 360, padX = 30, padY = 20;
+  const W = 700, H = 220, padX = 20, padY = 10;
 
   return (
     <div style={{ color: "#E2E8F0", fontFamily: "var(--font-sans), sans-serif", padding: "0", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 28 }}>
-        <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "#64748B", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>Strength 02 / 07</div>
-        <h1 style={{ fontSize: 32, fontWeight: 700, margin: "0 0 12px 0", lineHeight: 1.15, background: "linear-gradient(135deg, #E2E8F0 0%, #94A3B8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Analogical Structure Transfer</h1>
-        <p style={{ fontSize: 15, color: "#94A3B8", lineHeight: 1.65, margin: 0, maxWidth: 820 }}>
-          LLMs store <em>structure</em> separately from content. Force a cross-domain mapping and the model finds <strong style={{ color: "#CBD5E1" }}>structural isomorphisms</strong> that produce genuinely novel insight. The breakdowns are often more valuable than the mappings.
-        </p>
-      </div>
-
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 16 }}>
+      <div style={{ maxWidth: 960, width: "100%", marginBottom: 10 }}>
         <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, color: "#475569", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 10 }}>Choose a solved domain to map from</div>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           {SOLVED_STRUCTURES.map((s, i) => (
@@ -129,7 +121,7 @@ export default function Strength2Visual() {
         </div>
       </div>
 
-      <div style={{ background: "linear-gradient(180deg, #0F1629 0%, #131B2E 100%)", borderRadius: 16, border: "1px solid rgba(148,163,184,0.08)", padding: "24px 20px 16px", maxWidth: 960, width: "100%", boxShadow: "0 4px 40px rgba(0,0,0,0.4)" }}>
+      <div style={{ background: "linear-gradient(180deg, #0F1629 0%, #131B2E 100%)", borderRadius: 16, border: "1px solid rgba(148,163,184,0.08)", padding: "16px 20px 12px", maxWidth: 960, width: "100%", boxShadow: "0 4px 40px rgba(0,0,0,0.4)" }}>
         <svg viewBox={`0 0 ${W + padX * 2} ${H + padY * 2}`} style={{ width: "100%", height: "auto", display: "block" }}>
           <defs>
             <linearGradient id="tg" x1="0%" y1="0%" x2="100%" y2="0%">

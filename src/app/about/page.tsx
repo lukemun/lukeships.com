@@ -9,13 +9,20 @@ export default function AboutPage() {
     <div className="max-w-lg">
       <div className="prose prose-lg prose-p:leading-[1.8] prose-p:text-foreground">
         <p>
-          I&apos;m Luke. I write about how AI actually works under the hood and
-          how to build things with it that aren&apos;t terrible.
+          I&apos;m Luke. I&apos;m building{" "}
+          <a href="https://askwooly.com">Wooly</a>, an AI
+          assistant for marketing on Threads. Before that I was a Solutions
+          Engineer at Sentry, where I showed up with zero sales experience and
+          spent the next year closing six-figure deals with the NFL, X.com,
+          Etsy, and Roblox. I like solving problems that cut across domains —
+          naturally, I have an interest in startups. Most of them didn&apos;t
+          work out.
         </p>
         <p>
-          This site is where I put the things I ship — writing, visuals, and
-          whatever else seems worth sharing.
+          I attended USC and studied computer science, business, and
+          screenwriting.
         </p>
+        <p>This site is where I put the things I build and the things I write.</p>
       </div>
     </div>
   );
