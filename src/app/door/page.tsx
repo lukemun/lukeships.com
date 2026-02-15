@@ -1,12 +1,14 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const WORDS = ["LET", "ME", "IN"];
 
 export default function DoorPage() {
   const [pressedKeys, setPressedKeys] = useState<Set<number>>(new Set());
   const [inkSpots, setInkSpots] = useState<{ x: number; y: number }[]>([]);
+  const [doorsVisible, setDoorsVisible] = useState(false);
+  const [doorsOpen, setDoorsOpen] = useState(false);
   const keyRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const pressedRef = useRef<Set<number>>(new Set());
 
@@ -27,6 +29,20 @@ export default function DoorPage() {
   }, []);
 
   const allPressed = pressedKeys.size === 7;
+
+  useEffect(() => {
+    if (!allPressed) return;
+    const showTimer = setTimeout(() => {
+      setDoorsVisible(true);
+    }, 1800);
+    const openTimer = setTimeout(() => {
+      setDoorsOpen(true);
+    }, 2200);
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(openTimer);
+    };
+  }, [allPressed]);
 
   let keyIndex = 0;
 
@@ -53,6 +69,18 @@ export default function DoorPage() {
           }}
         />
       ))}
+      {doorsVisible && (
+        <>
+          <div
+            className="fixed top-0 left-0 z-[60] h-full w-1/2 bg-black transition-transform duration-800 ease-in-out"
+            style={{ transform: doorsOpen ? "translateX(-100%)" : "translateX(0)" }}
+          />
+          <div
+            className="fixed top-0 right-0 z-[60] h-full w-1/2 bg-black transition-transform duration-800 ease-in-out"
+            style={{ transform: doorsOpen ? "translateX(100%)" : "translateX(0)" }}
+          />
+        </>
+      )}
       <div className="flex items-center gap-6">
         {WORDS.map((word, wordIdx) => (
           <div key={wordIdx} className="flex gap-1">
