@@ -40,14 +40,8 @@ export default function Strength3Visual() {
   return (
     <div style={{ color: "#E2E8F0", fontFamily: "var(--font-sans), sans-serif", padding: "0", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 28 }}>
-        <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "#64748B", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>Strength 03 / 07</div>
-        <h1 style={{ fontSize: 32, fontWeight: 700, margin: "0 0 12px 0", lineHeight: 1.15, background: "linear-gradient(135deg, #E2E8F0 0%, #94A3B8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Constraint Satisfaction at Scale</h1>
-        <p style={{ fontSize: 15, color: "#94A3B8", lineHeight: 1.65, margin: 0, maxWidth: 820 }}>Each constraint <strong style={{ color: "#CBD5E1" }}>eliminates a region of probability space</strong>. Add enough and the "safe, average" center becomes impossible — the model must find solutions at the creative edges. Like jazz: rigid structure <em>forces</em> creativity.</p>
-      </div>
-
       {/* Probability Bar */}
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 20 }}>
+      <div style={{ maxWidth: 960, width: "100%", marginBottom: 12 }}>
         <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "#475569", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 8 }}>Output probability space — {remainingArea}% remaining</div>
         <div style={{ width: "100%", height: 32, background: "rgba(15,22,41,0.6)", borderRadius: 8, border: "1px solid rgba(148,163,184,0.08)", display: "flex", overflow: "hidden" }}>
           {CONSTRAINTS.slice(0, activeConstraints).map((c) => (
@@ -64,7 +58,7 @@ export default function Strength3Visual() {
       </div>
 
       {/* Constraint Toggles */}
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 20 }}>
+      <div style={{ maxWidth: 960, width: "100%", marginBottom: 10 }}>
         <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "#475569", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 10 }}>Click constraints to add/remove</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           {CONSTRAINTS.map((c, i) => {

@@ -39,16 +39,8 @@ export default function Strength7Visual() {
   return (
     <div style={{ color: "#E2E8F0", fontFamily: "var(--font-sans), sans-serif", padding: "0", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 28 }}>
-        <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "#64748B", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>Strength 07 / 07</div>
-        <h1 style={{ fontSize: 32, fontWeight: 700, margin: "0 0 12px 0", lineHeight: 1.15, background: "linear-gradient(135deg, #E2E8F0 0%, #94A3B8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Rapid Combinatorial Exploration</h1>
-        <p style={{ fontSize: 15, color: "#94A3B8", lineHeight: 1.65, margin: 0, maxWidth: 820 }}>
-          No human generates 10 variations in 30 seconds spanning different <strong style={{ color: "#CBD5E1" }}>dimensions of variation</strong> simultaneously. Ask for 3 and you get clichés. Ask for 10 and <strong style={{ color: "#10B981" }}>options 7–10 are where the interesting ideas live</strong> — the obvious approaches exhaust by option 5.
-        </p>
-      </div>
-
       {/* Dimensions */}
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 20, display: "flex", gap: 8, flexWrap: "wrap" }}>
+      <div style={{ maxWidth: 960, width: "100%", marginBottom: 12, display: "flex", gap: 8, flexWrap: "wrap" }}>
         {DIMENSIONS.map((d) => (
           <div key={d.id} style={{ flex: "1 1 140px", padding: "10px 12px", background: "rgba(15,22,41,0.5)", border: "1px solid rgba(148,163,184,0.06)", borderRadius: 8 }}>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "#475569", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 6 }}>{d.label}</div>

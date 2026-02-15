@@ -80,16 +80,8 @@ export default function Strength4Visual() {
   return (
     <div style={{ color: "#E2E8F0", fontFamily: "var(--font-sans), sans-serif", padding: "0", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 28 }}>
-        <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "#64748B", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>Strength 04 / 07</div>
-        <h1 style={{ fontSize: 32, fontWeight: 700, margin: "0 0 12px 0", lineHeight: 1.15, background: "linear-gradient(135deg, #E2E8F0 0%, #94A3B8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Lossy Compression of Expert Knowledge</h1>
-        <p style={{ fontSize: 15, color: "#94A3B8", lineHeight: 1.65, margin: 0, maxWidth: 820 }}>
-          The model has compressed millions of expert-hours. Role prompting isn't a style trick — it <strong style={{ color: "#CBD5E1" }}>activates different weight regions</strong>, literally changing which knowledge clusters fire. Same question, structurally different analysis.
-        </p>
-      </div>
-
       {/* Role Selector */}
-      <div style={{ maxWidth: 960, width: "100%", marginBottom: 16 }}>
+      <div style={{ maxWidth: 960, width: "100%", marginBottom: 10 }}>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           {ROLES.map((r, i) => (
             <button key={r.id} onClick={() => setSelectedRole(i)} style={{
