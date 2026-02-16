@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Titan_One } from "next/font/google";
 
 const titanOne = Titan_One({ subsets: ["latin"], weight: ["400"] });
@@ -32,6 +33,7 @@ function buildExtrusion(color: string, layers: number): string {
 }
 
 export default function DoorPage() {
+  const router = useRouter();
   const [pressedKeys, setPressedKeys] = useState<Set<number>>(new Set());
   const [inkSpots, setInkSpots] = useState<{ x: number; y: number; color: string }[]>([]);
   const [lettersSinking, setLettersSinking] = useState(false);
@@ -84,7 +86,9 @@ export default function DoorPage() {
     const t2 = setTimeout(() => setSeamVisible(true), 1100);
     // Doors swing open, blackout fades out
     const t3 = setTimeout(() => setDoorsSwinging(true), 1800);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+    // Navigate to real homepage after doors fully fade (2400ms swing)
+    const t4 = setTimeout(() => router.replace("/"), 1800 + 2400);
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); };
   }, [screenCovered]);
 
   useEffect(() => {
@@ -208,10 +212,25 @@ export default function DoorPage() {
         />
       )}
       {doorsReady && (
+        <iframe
+          src="/"
+          className="fixed inset-0 z-[58] border-none"
+          style={{
+            width: "100%", height: "100%",
+            opacity: doorsSwinging ? 1 : 0,
+            transition: "opacity 600ms ease-out 1200ms",
+          }}
+          tabIndex={-1}
+          aria-hidden="true"
+        />
+      )}
+      {doorsReady && (
         <div className="fixed inset-0 z-[60]" style={{
           perspective: "800px",
           perspectiveOrigin: "50% 85%",
           transformStyle: "preserve-3d",
+          opacity: doorsSwinging ? 0 : 1,
+          transition: "opacity 1600ms ease-in 800ms",
         }}>
           {/* Left door — hinges on left edge */}
           <div style={{
