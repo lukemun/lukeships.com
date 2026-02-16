@@ -17,7 +17,7 @@ const visuals: Record<number, React.ComponentType> = {
 
 // Map mechanic numbers to visual component numbers
 const MECHANIC_VISUALS: Record<number, number[]> = {
-  1: [1, 2], // Pattern Blending + Structure Transfer
+  1: [1],    // Pattern Blending
   2: [3, 6], // Constraint Stacking + Structured Output
   3: [],     // Context Window — no visual
   4: [4],    // Expert Compression
