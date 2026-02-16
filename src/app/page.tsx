@@ -1,10 +1,17 @@
 import Link from "next/link";
 
-const posts = [
+const recent = [
   {
-    slug: "exploiting-llm-mechanics",
+    href: "/door",
+    title: "Let Me In — a 3D door you have to knock on",
+    date: "2026-02-15",
+    type: "project",
+  },
+  {
+    href: "/writing/exploiting-llm-mechanics",
     title: "Exploiting the Actual Mechanics of LLMs: A Framework Atlas",
     date: "2026-02-14",
+    type: "writing",
   },
 ];
 
@@ -27,14 +34,15 @@ export default function Home() {
           Recent
         </h2>
         <ul className="flex flex-col gap-6">
-          {posts.map((post) => (
-            <li key={post.slug}>
-              <Link href={`/writing/${post.slug}`} className="group block">
-                <time className="font-mono text-xs text-muted">
-                  {post.date}
-                </time>
+          {recent.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} className="group block">
+                <div className="flex items-baseline gap-3">
+                  <time className="font-mono text-xs text-muted">{item.date}</time>
+                  <span className="font-mono text-xs text-muted">{item.type}</span>
+                </div>
                 <h3 className="mt-1 text-lg font-medium leading-snug group-hover:underline decoration-1 underline-offset-4">
-                  {post.title}
+                  {item.title}
                 </h3>
               </Link>
             </li>
