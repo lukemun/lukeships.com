@@ -69,9 +69,9 @@ function findNextH2(md: string, afterIndex: number): number {
 }
 
 const FRAMEWORK_KEYWORDS: Record<string, { color: string; bg: string; border: string }> = {
-  "Exploits:": { color: "text-emerald-400", bg: "bg-emerald-950/30", border: "border-emerald-800/40" },
-  "Compensates:": { color: "text-amber-400", bg: "bg-amber-950/30", border: "border-amber-800/40" },
-  "Provenance:": { color: "text-blue-400", bg: "bg-blue-950/30", border: "border-blue-800/40" },
+  "Exploits:": { color: "text-emerald-700 dark:text-emerald-400", bg: "bg-emerald-50 dark:bg-emerald-950/30", border: "border-emerald-200 dark:border-emerald-800/40" },
+  "Compensates:": { color: "text-amber-700 dark:text-amber-400", bg: "bg-amber-50 dark:bg-amber-950/30", border: "border-amber-200 dark:border-amber-800/40" },
+  "Provenance:": { color: "text-blue-700 dark:text-blue-400", bg: "bg-blue-50 dark:bg-blue-950/30", border: "border-blue-200 dark:border-blue-800/40" },
 };
 
 function getFrameworkKeyword(children: React.ReactNode): string | null {
@@ -97,12 +97,12 @@ const markdownComponents: Components = {
         <div className={`font-mono text-[10px] tracking-widest uppercase ${style.color} mb-2`}>
           {kw.replace(":", "")}
         </div>
-        <div className="text-[15px] leading-relaxed text-[#CBD5E1]">
+        <div className="text-[15px] leading-relaxed text-foreground/80 dark:text-[#CBD5E1]">
           {React.Children.map(children, (child, i) => {
             if (i === 0 && React.isValidElement(child) && child.type === "strong") {
               const text = String((child.props as { children?: React.ReactNode }).children ?? "");
               const remaining = text.slice(kw.length).trim();
-              return remaining ? <span className="text-[#94A3B8]">{remaining} </span> : null;
+              return remaining ? <span className="text-muted dark:text-[#94A3B8]">{remaining} </span> : null;
             }
             return child;
           })}
@@ -129,7 +129,7 @@ export default function ArticleRenderer({ content }: { content: string }) {
           : [];
         return (
           <div key={i}>
-            <div className="prose prose-lg max-w-none prose-headings:tracking-tighter prose-headings:font-bold prose-h3:mt-16 prose-p:leading-[1.75] prose-pre:font-mono prose-pre:bg-[#0f1629] prose-pre:text-[#e2e8f0] prose-code:text-foreground prose-strong:text-foreground prose-th:text-left prose-table:text-sm">
+            <div className="prose prose-lg max-w-none prose-headings:tracking-tighter prose-headings:font-bold prose-h3:mt-16 prose-p:leading-[1.75] prose-pre:font-mono prose-pre:bg-[#f1f5f9] prose-pre:text-[#1e293b] dark:prose-pre:bg-[#0f1629] dark:prose-pre:text-[#e2e8f0] prose-code:text-foreground prose-strong:text-foreground prose-th:text-left prose-table:text-sm">
               <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
                 {section.markdown}
               </ReactMarkdown>
@@ -141,7 +141,7 @@ export default function ArticleRenderer({ content }: { content: string }) {
                   <div className="px-6 py-4 md:px-8 md:py-5">
                     <Visual />
                   </div>
-                  <figcaption className="px-6 pb-3 font-mono text-xs text-[#64748B]">
+                  <figcaption className="px-6 pb-3 font-mono text-xs text-muted dark:text-[#64748B]">
                     Interactive visualization
                   </figcaption>
                 </figure>
