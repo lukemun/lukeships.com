@@ -31,6 +31,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
+        {/* Send first-time visitors through /door before painting the homepage. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var p=location.pathname;if(p==="/door"){localStorage.setItem("doorVisited","1");}else if(p==="/"&&!localStorage.getItem("doorVisited")){location.replace("/door");}}catch(e){}})();`,
+          }}
+        />
         <div className="mx-auto min-h-screen max-w-2xl px-6 py-10 md:py-16">
           <header className="mb-20 flex items-baseline justify-between">
             <Link
