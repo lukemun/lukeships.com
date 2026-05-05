@@ -2,6 +2,18 @@ import Link from "next/link";
 
 const recent = [
   {
+    href: "/projects/booktrailer",
+    title: "Booktrailer — bring your book to life",
+    date: "2026-04-17",
+    type: "project",
+  },
+  {
+    href: "/projects/askwooly",
+    title: "AskWooly — a command center for Threads",
+    date: "2026-02-25",
+    type: "project",
+  },
+  {
     href: "/door",
     title: "Let Me In — a 3D door you have to knock on",
     date: "2026-02-15",
@@ -12,6 +24,12 @@ const recent = [
     title: "Exploiting the Actual Mechanics of LLMs: A Framework Atlas",
     date: "2026-02-14",
     type: "writing",
+  },
+  {
+    href: "/projects/tripsnag",
+    title: "TripSnag — travel together, save together",
+    date: "2025-10-22",
+    type: "project",
   },
 ];
 
