@@ -42,9 +42,6 @@ export default function Home() {
           <br />
           Munro
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-muted max-w-md leading-relaxed">
-          Writing about AI, building things, and shipping ideas.
-        </p>
       </section>
 
       <section>
