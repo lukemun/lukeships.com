@@ -14,11 +14,11 @@ type Project = {
 
 const projects: Project[] = [
   {
-    href: "/projects/booktrailer",
-    title: "Booktrailer — bring your book to life",
+    href: "/projects/maketrailer",
+    title: "MakeTrailer — an AI design canvas for authors",
     description:
-      "A self-serve studio for authors: trailers, social posts, and ads — drawn straight from your manuscript, your characters, your world.",
-    date: "2026-04-17",
+      "A unified design canvas that pulls directly from your manuscript via automated Quickstarts to generate high-quality visual marketing content (comics, character teasers, and storyboards).",
+    date: "2026-08-19",
   },
   {
     href: "/projects/askwooly",

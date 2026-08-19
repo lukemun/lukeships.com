@@ -5,14 +5,7 @@ export const metadata: Metadata = {
   title: "Writing",
 };
 
-const posts = [
-  {
-    slug: "exploiting-llm-mechanics",
-    title: "Exploiting the Actual Mechanics of LLMs: A Framework Atlas",
-    date: "2026-02-14",
-    readingTime: "15 min",
-  },
-];
+const posts: any[] = [];
 
 export default function WritingPage() {
   return (
