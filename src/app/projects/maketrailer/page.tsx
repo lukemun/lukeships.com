@@ -99,7 +99,7 @@ export default function MakeTrailerProjectPage() {
 
         <figure className="flex flex-col gap-2">
           <Image
-            src="/projects/maketrailer-character-brief.jpg"
+            src="/projects/maketrailer-character-brief.png"
             alt="MakeTrailer Character Portrait Brief"
             width={1512}
             height={836}
