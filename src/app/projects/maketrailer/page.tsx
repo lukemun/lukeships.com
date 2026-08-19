@@ -33,12 +33,12 @@ export default function MakeTrailerProjectPage() {
           <time>2026-08-19</time>
           <span aria-hidden>·</span>
           <a
-            href="https://booktrailer.io"
+            href="https://maketrailer.io"
             target="_blank"
             rel="noopener noreferrer"
             className="underline decoration-1 underline-offset-4 hover:text-foreground transition-colors"
           >
-            maketrailer.com →
+            maketrailer.io →
           </a>
         </div>
       </header>
@@ -99,14 +99,14 @@ export default function MakeTrailerProjectPage() {
 
         <figure className="flex flex-col gap-2">
           <Image
-            src="/projects/maketrailer-showcase.jpg"
-            alt="MakeTrailer Reader Invitation card"
+            src="/projects/maketrailer-quickstart.png"
+            alt="MakeTrailer Quickstart Interface"
             width={1512}
             height={836}
             className="rounded-lg border border-black/10 dark:border-white/10"
           />
           <figcaption className="font-mono text-xs text-muted">
-            Reader Invitations: Turning text into highly specific visual briefs paired with promotional copy.
+            The automated Quickstarts interface pulling context directly from your manuscript.
           </figcaption>
         </figure>
       </div>
