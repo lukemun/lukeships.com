@@ -64,6 +64,19 @@ export default function MakeTrailerProjectPage() {
         <p>
           At the core of the app is a bespoke &quot;agentic&quot; architecture—powered by Next.js, Supabase, LLMs for narrative extraction, and fal.ai for image generation. Instead of disjointed tools, everything is orchestrated through automated &quot;Quickstarts&quot; that pull context directly from the manuscript.
         </p>
+        
+        <figure className="flex flex-col gap-2">
+          <Image
+            src="/projects/maketrailer-quickstart.png"
+            alt="MakeTrailer Quickstart Interface"
+            width={1512}
+            height={836}
+            className="rounded-lg border border-black/10 dark:border-white/10"
+          />
+          <figcaption className="font-mono text-xs text-muted">
+            The automated Quickstarts interface pulling context directly from your manuscript.
+          </figcaption>
+        </figure>
 
         <h2 className="mt-2 text-sm font-mono uppercase tracking-wide text-muted">
           The Workflow
@@ -86,27 +99,27 @@ export default function MakeTrailerProjectPage() {
 
         <figure className="flex flex-col gap-2">
           <Image
-            src="/projects/maketrailer-character-grid.png"
-            alt="MakeTrailer Character Portrait Grid"
+            src="/projects/maketrailer-character-brief.jpg"
+            alt="MakeTrailer Character Portrait Brief"
             width={1512}
             height={836}
             className="rounded-lg border border-black/10 dark:border-white/10"
           />
           <figcaption className="font-mono text-xs text-muted">
-            Character Introductions: Building the visual identity and generating highly consistent 'Meet the Cast' portraits.
+            Character Introductions: The visual brief pulling attributes directly from the book to generate highly consistent portraits.
           </figcaption>
         </figure>
 
         <figure className="flex flex-col gap-2">
           <Image
-            src="/projects/maketrailer-quickstart.png"
-            alt="MakeTrailer Quickstart Interface"
+            src="/projects/maketrailer-showcase.jpg"
+            alt="MakeTrailer Reader Invitation card"
             width={1512}
             height={836}
             className="rounded-lg border border-black/10 dark:border-white/10"
           />
           <figcaption className="font-mono text-xs text-muted">
-            The automated Quickstarts interface pulling context directly from your manuscript.
+            Reader Invitations: Turning text into highly specific visual briefs paired with promotional copy.
           </figcaption>
         </figure>
       </div>
