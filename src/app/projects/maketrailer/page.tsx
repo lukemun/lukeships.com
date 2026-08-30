@@ -27,7 +27,7 @@ export default function MakeTrailerProjectPage() {
           MakeTrailer
         </h1>
         <p className="mt-3 text-lg text-muted leading-relaxed">
-          An AI design canvas that pulls directly from your manuscript to generate your visual marketing.
+          An AI design canvas and market-research engine for authors.
         </p>
         <div className="mt-4 flex items-center gap-4 font-mono text-xs text-muted">
           <time>2026-08-19</time>
@@ -45,7 +45,10 @@ export default function MakeTrailerProjectPage() {
 
       <div className="flex flex-col gap-10 leading-relaxed">
         <p>
-          Authors spend months writing incredible stories, but marketing them requires constant, high-quality visual content. Generic AI image generators usually fail at this because they lack narrative context and visual consistency. MakeTrailer bridges the gap as an &quot;AI Art Director&quot; that reads the book and outputs controlled, editable design assets.
+          Authors spend months writing their stories, but marketing them requires
+          a steady supply of covers, ads, and social creative. MakeTrailer read
+          the manuscript, extracted its characters and visual language, and
+          turned that context into controlled, editable design assets.
         </p>
 
         <figure className="flex flex-col gap-2">
@@ -77,6 +80,33 @@ export default function MakeTrailerProjectPage() {
             The automated Quickstarts interface pulling context directly from your manuscript.
           </figcaption>
         </figure>
+
+        <h2 className="mt-2 text-sm font-mono uppercase tracking-wide text-muted">
+          Genre Cover Trends
+        </h2>
+
+        <p>
+          Before asking authors to try the product, I wanted to give them
+          something immediately useful. I built Genre Cover Trends, a system
+          that analyzed bestselling Amazon covers and identified the visual
+          patterns within individual genres and subgenres.
+        </p>
+
+        <p>
+          It examined art style, typography, color, subject matter,
+          composition, and what survived at thumbnail size. The findings became
+          mobile-first reports authors could use while planning their own
+          covers. Those reports became MakeTrailer&apos;s lead magnet and generated
+          more than 50 leads.
+        </p>
+
+        <p>
+          The research also improved the product. I created human-scored
+          evaluations for art-style recognition, studied where the system
+          failed, and refined its taxonomy and prompts. On our internal
+          benchmark, the resulting pipeline scored higher than the GPT baseline
+          at recognizing cover art styles.
+        </p>
 
         <h2 className="mt-2 text-sm font-mono uppercase tracking-wide text-muted">
           The Workflow
@@ -122,6 +152,34 @@ export default function MakeTrailerProjectPage() {
             Reader Invitations: Turning text into highly specific visual briefs paired with promotional copy.
           </figcaption>
         </figure>
+
+        <h2 className="mt-2 text-sm font-mono uppercase tracking-wide text-muted">
+          Why I Pivoted
+        </h2>
+
+        <p>
+          The product worked, but the market was moving in the opposite
+          direction. AI had become a reputational risk in publishing. That
+          became especially clear when Jerry Falade&apos;s reported $2 million book
+          deal collapsed amid questions about possible AI use, despite his
+          denial of the allegations.{" "}
+          <a
+            href="https://www.publishersweekly.com/pw/by-topic/industry-news/publisher-news/article/100983-after-the-cancellation-of-call-me-i-ll-hide-the-body-what-comes-next.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-1 underline-offset-4 hover:text-foreground transition-colors"
+          >
+            Publishers Weekly covered the dispute
+          </a>
+          .
+        </p>
+
+        <p>
+          Authors still needed better marketing, but many no longer wanted AI
+          associated with their creative work. MakeTrailer asked them to
+          publicly embrace the exact label they were increasingly trying to
+          avoid. I eventually pivoted away from the product.
+        </p>
       </div>
     </article>
   );

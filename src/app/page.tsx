@@ -3,7 +3,7 @@ import Link from "next/link";
 const recent = [
   {
     href: "/projects/maketrailer",
-    title: "MakeTrailer — an AI design canvas for authors",
+    title: "MakeTrailer — AI creative tooling and genre cover research",
     date: "2026-08-19",
     type: "project",
   },

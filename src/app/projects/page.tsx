@@ -15,9 +15,9 @@ type Project = {
 const projects: Project[] = [
   {
     href: "/projects/maketrailer",
-    title: "MakeTrailer — an AI design canvas for authors",
+    title: "MakeTrailer — AI creative tooling and genre cover research",
     description:
-      "A unified design canvas that pulls directly from your manuscript via automated Quickstarts to generate high-quality visual marketing content (comics, character teasers, and storyboards).",
+      "A manuscript-aware design canvas paired with genre cover research that generated 50+ author leads.",
     date: "2026-08-19",
   },
   {
